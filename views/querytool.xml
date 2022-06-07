@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="query_tool_tree" model="ir.ui.view">
+        <field name="name">query.tool.tree</field>
+        <field name="model">query.tool</field>
+        <field name="arch" type="xml">
+          <tree string="Query Tool">
+              <field name="name"/>
+              <field name="query"/>
+              <field name="create_date" />
+          </tree>
+        </field>
+    </record>
+
+
+    <record id="query_tool_form" model="ir.ui.view">
+        <field name="name">query.tool.form</field>
+        <field name="model">query.tool</field>
+        <field name="arch" type="xml">
+            <form string="Query Tool">
+                <group>
+                </group>
+                  <p class="oe_view_nocontent_create">
+                    Query to execute
+                  </p>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="query"/>
+                        </group>
+                        <group>
+<!--                        <button name="update_tables_list" type="object" string="Update table list" class="btn-primary"/>-->
+                            <field name="tables"/>
+                            <field name="query_type"/>
+                        </group>
+                    </group>
+                <footer>
+                    <button name="do_query" type="object" string="Launch query" confirm="Action is irreversible.Are you sure to run query?" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="query_action" model="ir.actions.act_window">
+        <field name="name">Query Tool</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">query.tool</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="view_id" ref="query_tool_tree"/>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new query
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="query_menu" name="Query" action="query_action" sequence="20" parent="base.menu_custom"/>
+
+
+</odoo>

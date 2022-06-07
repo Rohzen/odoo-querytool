@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data noupdate="0">
+        <record id="sample_record_0" model="query.tables">
+            <field name="name">account_invoice</field>
+        </record>
+        <record id="sample_record_1" model="query.tables">
+            <field name="name">sale_order</field>
+        </record>
+        <record id="sample_query_1" model="query.types">
+            <field name="name">DELETE</field>
+            <field name="query">DELETE from table_name WHERE id=?</field>
+        </record>
+        <record id="sample_query_2" model="query.types">
+            <field name="name">UPDATE</field>
+            <field name="query">UPDATE table_name SET field_name=? WHERE id=?</field>
+        </record>
+        <record id="sample_query_3" model="query.types">
+            <field name="name">INSERT</field>
+            <field name="query">INSERT INTO table_name(id, name,) VALUES(?, ?)</field>
+        </record>
+    </data>
+</odoo>

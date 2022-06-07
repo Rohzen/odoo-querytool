@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_query_tool_user,query.tool,model_query_tool,base.group_user,1,1,1,1
+access_query_tables_user,query.tables,model_query_tables,base.group_user,1,1,1,1
+access_query_types_user,query.tables,model_query_types,base.group_user,1,1,1,1
