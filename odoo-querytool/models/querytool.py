@@ -26,7 +26,6 @@ class QueryTool(models.Model):
         if self.tables.name and self.query_type.query:
             self.query = self.query_type.query.replace('table_name', self.tables.name)
 
-    @api.one
     def do_query(self):
         self.env.cr.execute(self.query)
 
